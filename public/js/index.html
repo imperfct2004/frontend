@@ -3,28 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Doctor App</title>
+    <title>My Doctor - Login & Register</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>My Doctor</header>
-    <div class="container">
-        <h2>User Registration</h2>
-        <form id="user-registration">
-            <input type="text" id="name" placeholder="Full Name" required>
-            <select id="user-type">
-                <option value="patient">Patient</option>
-                <option value="doctor">Doctor</option>
-            </select>
-            <select id="specialization" class="hidden">
-                <option>Cardiologist</option>
-                <option>Dermatologist</option>
-                <option>Neurologist</option>
-                <option>Orthopedic</option>
-            </select>
-            <button type="submit">Register</button>
-        </form>
+    <div class="container" id="container">
+        <!-- Existing User Login -->
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <button>Sign In</button>
+                <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+            </form>
+        </div>
+
+        <!-- User Type Selection -->
+        <div class="form-container user-type-container hidden">
+            <h1>Register as</h1>
+            <button id="registerDoctor">Doctor</button>
+            <button id="registerUser">Normal User</button>
+            <p>Already have an account? <a href="#" id="showLogin">Sign In</a></p>
+        </div>
+
+        <!-- Doctor Registration -->
+        <div class="form-container doctor-container hidden">
+            <form action="#">
+                <h1>Doctor Registration</h1>
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <input type="password" placeholder="Confirm Password" required />
+                <input type="text" placeholder="Specialization" required />
+                <input type="text" placeholder="Clinic Address" required />
+                <input type="number" placeholder="Years of Experience" required />
+                <label>Upload Certificates:</label>
+                <input type="file" accept=".pdf,.jpg,.png" required />
+                <button>Register as Doctor</button>
+                <p>Go back? <a href="#" id="backToUserType">Select User Type</a></p>
+            </form>
+        </div>
+
+        <!-- Normal User Registration -->
+        <div class="form-container user-container hidden">
+            <form action="#">
+                <h1>User Registration</h1>
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email" required />
+                <input type="password" placeholder="Password" required />
+                <input type="password" placeholder="Confirm Password" required />
+                <button>Register</button>
+                <p>Go back? <a href="#" id="backToUserType2">Select User Type</a></p>
+            </form>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
